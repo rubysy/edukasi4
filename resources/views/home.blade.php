@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -208,6 +207,139 @@
       }
     }
 
+    /* Glass Card Section */
+.glass-card-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 40px 20px;
+}
+.glass-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(105, 202, 232, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 25%, 
+    rgba(105, 202, 232, 0.08) 50%, 
+    rgba(255, 255, 255, 0.03) 75%, 
+    rgba(105, 202, 232, 0.06) 100%);
+  border-radius: 20px;
+  z-index: 1;
+}
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent, 
+    rgba(255, 255, 255, 0.05), 
+    transparent);
+  border-radius: 22px;
+  z-index: 0;
+}
+.glass-card-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.glass-card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.glass-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.glass-card-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(105, 202, 232, 0.3);
+}
+.glass-card-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #69cae8, #357ABD);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 4px 12px rgba(105, 202, 232, 0.3);
+}
+.glass-card-text {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+.glass-card-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(105, 202, 232, 0.6);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.glass-card-particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.glass-card-particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+.glass-card-particle:nth-child(3) { top: 80%; left: 30%; animation-delay: 4s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+}
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  .glass-card-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .glass-card-item {
+    padding: 12px;
+  }
+  .glass-card-text {
+    font-size: 0.9rem;
+  }
+}
+
     /* --- Carousel Styles --- */
     .ruanglingkup-carousel-wrapper {
       margin-top: 60px;
@@ -391,35 +523,56 @@
       margin-bottom: 30px;
     }
     .kolaborasi-carousel-container {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    .kolaborasi-carousel-track {
-      display: flex;
-      gap: 20px;
-      transition: transform 0.5s ease;
-    }
-    .kolaborasi-card {
-      width: 428px;
-      height: 180px;
-      background: #2bdde3ff;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-    .kolaborasi-dots-container {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
-    .kolaborasi-dots-container .dot {
-      width: 8px;
-      height: 8px;
-    }
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.kolaborasi-carousel {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  gap: 32px;
+}
+.kolaborasi-slide {
+  width: 252.19px;
+  min-width: 252.19px;
+  height: 176.81px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+.kolaborasi-slide img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.kolaborasi-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+.kolaborasi-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.kolaborasi-indicators .indicator.active {
+  background: #4A90E2;
+}
 
     @media (max-width: 768px) {
       .ruanglingkup-carousel-title {
@@ -473,27 +626,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="#" class="logo" aria-label="Logo Edukasi4ID">
-      <!-- Simplified stylized '4' logo icon -->
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="10" y="10" width="12" height="12" />
-        <rect x="28" y="10" width="12" height="12" fill="#f15a24" />
-        <rect x="46" y="10" width="8" height="12" fill="#262626" />
-        <text x="10" y="54" font-size="36" font-family="Arial" fill="#69cae8" font-weight="bold">4</text>
-      </svg>
-      <span style="margin-left:5px;">EDUKASI</span>
-    </a>
-    <nav role="navigation" aria-label="Primary navigation">
-      <a href="#" class="active" aria-current="page">Beranda</a>
-      <a href="#">Profil</a>
-      <a href="#">Layanan</a>
-      <a href="#">Mitra</a>
-      <a href="#">Kontak Kami</a>
-      <a href="#">LMS</a>
-    </nav>
-  </header>
-
+  @include('navbar')
   <section class="hero" aria-label="Introduction headline">
     <h1>Transformasikan Hidup Anda Melalui<br />Pendidikan Terbaik</h1>
     <p>Menjadi Lembaga Konsultan Pendidikan dan Pelatihan Pengembangan Diri dan Organisasi yang Profesional di Indonesia</p>
@@ -511,6 +644,53 @@
           Edukasi4ID adalah platform yang dibentuk oleh para praktisi Teknologi Informasi dan Komunikasi yang berkomitmen kuat terhadap pengembangan pendidikan vokasi di Indonesia.
         </p>
       </div>
+      <!-- Glass Card Section -->
+<div class="glass-card-section">
+  <div class="glass-card">
+    <div class="glass-card-content">
+      <div class="glass-card-column">
+        <div class="glass-card-item">
+          <span class="glass-card-icon">1</span>
+          <span class="glass-card-text">Membantu Sekolah Menengah Kejuruan (SMK) dalam pelaksanaan prakerin</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">2</span>
+          <span class="glass-card-text">Menyelenggarakan pelatihan SDM secara profesional</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">3</span>
+          <span class="glass-card-text">Menyediakan kegiatan Uji Kompetensi berbasis industri</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">4</span>
+          <span class="glass-card-text">Mengembangkan inovasi dalam pembelajaran teknologi</span>
+        </div>
+      </div>
+      <div class="glass-card-column">
+        <div class="glass-card-item">
+          <span class="glass-card-icon">5</span>
+          <span class="glass-card-text">Menyusun kurikulum sesuai kebutuhan industri</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">6</span>
+          <span class="glass-card-text">Memberikan akses materi dan pelatihan terkini</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">7</span>
+          <span class="glass-card-text">Memfasilitasi kerja sama dengan dunia industri</span>
+        </div>
+        <div class="glass-card-item">
+          <span class="glass-card-icon">8</span>
+          <span class="glass-card-text">Menyediakan konsultasi dan bimbingan karir</span>
+        </div>
+      </div>
+    </div>
+    <!-- Floating particles -->
+    <div class="glass-card-particle"></div>
+    <div class="glass-card-particle"></div>
+    <div class="glass-card-particle"></div>
+  </div>
+</div>
     </section>
 
     <div class="ruanglingkup-carousel-wrapper">
@@ -557,43 +737,144 @@
     </div>
 
     <!-- Kolaborasi Section -->
-    <section class="kolaborasi-section">
-      <h1 class="kolaborasi-main-title">Kolaborasi</h1>
-      
-      <div class="kolaborasi-subsection" id="perusahaan-section">
-        <div class="kolaborasi-header"><h2>Perusahaan</h2></div>
-        <div class="kolaborasi-carousel-container">
-          <div class="nav-arrow left" onclick="moveKolaborasi('perusahaan', -1)">‹</div>
-          <div class="kolaborasi-carousel-track" id="perusahaan-track">
-            <!-- Contoh isi, bisa diganti sesuai kebutuhan -->
-            <div class="kolaborasi-card">PT. Teknologi Nusantara</div>
-            <div class="kolaborasi-card">PT. Inovasi Digital</div>
-            <div class="kolaborasi-card">PT. Solusi Data</div>
-            <div class="kolaborasi-card">PT. Cloud Indonesia</div>
-            <div class="kolaborasi-card">PT. AI Cerdas</div>
-          </div>
-          <div class="nav-arrow right" onclick="moveKolaborasi('perusahaan', 1)">›</div>
-        </div>
-        <div class="kolaborasi-dots-container" id="perusahaan-dots"></div>
-      </div>
+<section class="kolaborasi-section">
+  <h1 class="kolaborasi-main-title">Kolaborasi</h1>
+  <div class="kolaborasi-subsection" id="perusahaan-section">
+    <div class="kolaborasi-header"><h2>Perusahaan</h2></div>
+    <div class="kolaborasi-carousel-container">
+      <button class="nav-arrow left" onclick="moveKolaborasiSlide(-1, 'perusahaan')">‹</button>
+      <div class="kolaborasi-carousel" id="perusahaan-carousel">
+  @foreach($kolaborasiPerusahaan as $item)
+    <div class="kolaborasi-slide">
+      <img src="{{ asset('storage/'.$item->logo) }}" alt="{{ $item->nama }}">
+    </div>
+  @endforeach
+</div>
+      <button class="nav-arrow right" onclick="moveKolaborasiSlide(1, 'perusahaan')">›</button>
+    </div>
+    <div class="kolaborasi-indicators" id="perusahaan-indicators"></div>
+  </div>
 
       <div class="kolaborasi-subsection" id="akademisi-section">
         <div class="kolaborasi-header"><h2>Akademisi</h2></div>
         <div class="kolaborasi-carousel-container">
-          <div class="nav-arrow left" onclick="moveKolaborasi('akademisi', -1)">‹</div>
-          <div class="kolaborasi-carousel-track" id="akademisi-track">
-            <div class="kolaborasi-card">Universitas Indonesia</div>
-            <div class="kolaborasi-card">ITB</div>
-            <div class="kolaborasi-card">IPB</div>
-            <div class="kolaborasi-card">ITS</div>
-            <div class="kolaborasi-card">Universitas Brawijaya</div>
-          </div>
-          <div class="nav-arrow right" onclick="moveKolaborasi('akademisi', 1)">›</div>
+              <button class="nav-arrow left" onclick="moveKolaborasiSlide(-1, 'akademisi')">‹</button>
+         <div class="kolaborasi-carousel" id="akademisi-carousel">
+  @foreach($kolaborasiAkademisi as $item)
+    <div class="kolaborasi-slide">
+      <img src="{{ asset('storage/'.$item->logo) }}" alt="{{ $item->nama }}">
+    </div>
+  @endforeach
+</div>
+              <button class="nav-arrow right" onclick="moveKolaborasiSlide(1, 'akademisi')">›</button>
         </div>
-        <div class="kolaborasi-dots-container" id="akademisi-dots"></div>
+       <div class="kolaborasi-indicators" id="akademisi-indicators"></div>
       </div>
     </section>
 
+    <!-- Maps & Kontak Section -->
+<section class="glass-card-section" style="margin-top:60px;">
+  <div class="glass-card" style="max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+    <!-- Map Placeholder -->
+    <div style="background:#111; border-radius:16px; min-height:220px; display:flex; align-items:center; justify-content:center;">
+      <span style="color:#fff; font-weight:700; font-size:1.1rem;">MAPS LOKASI (akan diisi iframe)</span>
+    </div>
+    <!-- Kontak Info -->
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <!-- SVG lokasi -->
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.11 10.39 8.09 11.09.34.25.82.25 1.16 0C13.89 21.39 21 16.25 21 11c0-4.97-4.03-9-9-9zm0 17.88C9.14 17.07 5 13.61 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-4.14 6.07-7 8.88z"/><circle cx="12" cy="11" r="3" fill="#69cae8"/></svg>
+        <span class="glass-card-text" style="font-size:1rem;">Jl. Contoh Alamat No. 123, Kota, Provinsi</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <!-- SVG email -->
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z"/></svg>
+        <span class="glass-card-text" style="font-size:1rem;">info@edukasi4.id</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <!-- SVG WhatsApp/Telepon -->
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.26-1.45l-.38-.23-3.67.96.98-3.58-.24-.37A9.93 9.93 0 1 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.41-.84-.75-1.41-1.67-1.58-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.85.14.18 1.93 2.95 4.68 4.02.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34z"/></svg>
+        <span class="glass-card-text" style="font-size:1rem;">0812-3456-7890</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#222; color:#fff; padding:40px 0; width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:40px; padding:0 20px;">
+            <div style="flex:1 1 250px; min-width:220px;">
+                <div style="display:flex; align-items:center; gap:10px; font-size:1.5rem; font-weight:700; letter-spacing:-0.04em;">
+                    <svg viewBox="0 0 64 64" width="36" height="36">
+                        <rect x="10" y="10" width="12" height="12" fill="#69cae8"/>
+                        <rect x="28" y="10" width="12" height="12" fill="#f15a24"/>
+                        <rect x="46" y="10" width="8" height="12" fill="#262626"/>
+                        <text x="10" y="54" font-size="36" font-family="Arial" fill="#69cae8" font-weight="bold">4</text>
+                    </svg>
+                    EDUKASI4ID
+                </div>
+                <div style="margin-top:12px; font-size:0.98rem; color:#bbb;">
+                    Platform pengembangan pendidikan vokasi & pelatihan profesional Indonesia.
+                </div>
+            </div>
+            
+            <div style="flex:1 1 180px; min-width:160px;">
+                <div style="font-weight:700; margin-bottom:12px;">Navigasi</div>
+                <div style="display:flex; flex-direction:column; gap:7px;">
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Beranda</a>
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Profil</a>
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Layanan</a>
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Mitra</a>
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Kontak Kami</a>
+                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">LMS</a>
+                </div>
+            </div>
+            
+            <div style="flex:1 1 220px; min-width:180px;">
+                <div style="font-weight:700; margin-bottom:12px;">Kontak</div>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                    <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
+                        <path d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.11 10.39 8.09 11.09.34.25.82.25 1.16 0C13.89 21.39 21 16.25 21 11c0-4.97-4.03-9-9-9zm0 17.88C9.14 17.07 5 13.61 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-4.14 6.07-7 8.88z"/>
+                        <circle cx="12" cy="11" r="3"/>
+                    </svg>
+                    <span>Jl. Contoh Alamat No. 123, Kota</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                    <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z"/>
+                    </svg>
+                    <span>info@edukasi4.id</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
+                        <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.26-1.45l-.38-.23-3.67.96.98-3.58-.24-.37A9.93 9.93 0 1 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.41-.84-.75-1.41-1.67-1.58-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.85.14.18 1.93 2.95 4.68 4.02.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34z"/>
+                    </svg>
+                    <span>0812-3456-7890</span>
+                </div>
+            </div>
+            
+            <div style="flex:1 1 200px; min-width:160px;">
+                <div style="font-weight:700; margin-bottom:12px;">Sosial Media</div>
+                <div style="display:flex; gap:14px;">
+                    <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Instagram" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Facebook" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="LinkedIn" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="YouTube" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align:center; color:#bbb; font-size:0.98rem; margin-top:32px; padding-top:20px; border-top:1px solid #444;">
+            &copy; 2025 Edukasi4ID. All rights reserved.
+        </div>
+    </footer>
   </main>
 
   <script>
@@ -602,6 +883,7 @@
     const totalCards = 10;
     const cards = document.querySelectorAll('.card');
     const dotsContainer = document.getElementById('dotsContainer');
+    const kolaborasiHandlers = {};
 
     // Generate dots
     for (let i = 0; i < totalCards; i++) {
@@ -653,92 +935,48 @@
       updateCarousel();
     }
 
-    // Kolaborasi Carousel
-    function setupKolaborasiSlider(type) {
-  const track = document.getElementById(type + '-track');
-  const cards = Array.from(track.children);
-  const dotsContainer = document.getElementById(type + '-dots');
+    // Kolaborasi Perusahaan Logo Carousel
+function setupKolaborasiLogoCarousel(id) {
+  const carousel = document.getElementById(id + '-carousel');
+  const slides = carousel.querySelectorAll('.kolaborasi-slide');
+  const indicatorsContainer = document.getElementById(id + '-indicators');
   let current = 0;
-  const total = cards.length;
 
-  // Clone for infinite effect
-  const firstClone = cards[0].cloneNode(true);
-  const lastClone = cards[total - 1].cloneNode(true);
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, cards[0]);
-  let slideCount = total + 2;
-
-  function getCardWidth() {
-    return cards[0].offsetWidth + 20;
-  }
-
-  track.style.transition = 'none';
-  track.style.transform = `translateX(${-getCardWidth()}px)`;
-
-  dotsContainer.innerHTML = '';
-  for (let i = 0; i < total; i++) {
+  // Buat indikator
+  indicatorsContainer.innerHTML = '';
+  slides.forEach((_, i) => {
     const dot = document.createElement('div');
-    dot.className = 'dot';
-    if (i === 0) dot.classList.add('active');
-    dot.onclick = () => goToKolaborasi(type, i);
-    dotsContainer.appendChild(dot);
-  }
-  const dots = dotsContainer.querySelectorAll('.dot');
-
-  function updateDots(idx) {
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
-  }
-
-  function move(n) {
-    if (track.isTransitioning) return;
-    track.isTransitioning = true;
-    current += n;
-    track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
-    track.style.transform = `translateX(${-getCardWidth() * (current + 1)}px)`;
-    setTimeout(() => {
-      if (current < 0) {
-        track.style.transition = 'none';
-        current = total - 1;
-        track.style.transform = `translateX(${-getCardWidth() * (current + 1)}px)`;
-      }
-      if (current >= total) {
-        track.style.transition = 'none';
-        current = 0;
-        track.style.transform = `translateX(${-getCardWidth() * (current + 1)}px)`;
-      }
-      updateDots(current);
-      track.isTransitioning = false;
-    }, 510);
-    updateDots((current + total) % total);
-  }
-
-  function goTo(idx) {
-    if (track.isTransitioning) return;
-    current = idx;
-    track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
-    track.style.transform = `translateX(${-getCardWidth() * (current + 1)}px)`;
-    updateDots(current);
-  }
-
-  window['moveKolaborasi'] = window['moveKolaborasi'] || function(){};
-  window['goToKolaborasi'] = window['goToKolaborasi'] || function(){};
-  window['moveKolaborasi'] = function(t, n) {
-    if (t === type) move(n);
-  };
-  window['goToKolaborasi'] = function(t, idx) {
-    if (t === type) goTo(idx);
-  };
-
-  window.addEventListener('resize', () => {
-    track.style.transition = 'none';
-    track.style.transform = `translateX(${-getCardWidth() * (current + 1)}px)`;
+    dot.className = 'indicator' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goTo(i);
+    indicatorsContainer.appendChild(dot);
   });
+  const indicators = indicatorsContainer.querySelectorAll('.indicator');
+
+  function update() {
+    carousel.style.transform = `translateX(-${current * (slides[0].offsetWidth + 32)}px)`;
+    indicators.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  }
+  function move(n) {
+    current = (current + n + slides.length) % slides.length;
+    update();
+  }
+  function goTo(i) {
+    current = i;
+    update();
+  }
+  kolaborasiHandlers[id] = move;
+  update();
+  setInterval(() => move(1), 4000);
 }
 
-    // Initialize everything
-    updateCarousel();
-    initKol('perusahaan');
-    initKol('akademisi');
+// Handler global agar arrow bisa akses carousel manapun
+window.moveKolaborasiSlide = function(n, t) {
+  if (kolaborasiHandlers[t]) kolaborasiHandlers[t](n);
+};
+
+// Inisialisasi
+setupKolaborasiLogoCarousel('perusahaan');
+setupKolaborasiLogoCarousel('akademisi');
 
     // Auto-rotate for main carousel
     setInterval(nextCard, 5000);
