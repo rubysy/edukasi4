@@ -83,7 +83,6 @@
       }
     }
   </style>
-</head>
 <body class="antialiased" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
   @include('navbar')
   @yield('content')
