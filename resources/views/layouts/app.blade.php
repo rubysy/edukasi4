@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@yield('title', 'Edukasi4 ID')</title>
-  <link rel="icon" href="https://edukasi4.id/gambar/edukai.png">
+  <title>@yield('Edukasi4ID', 'Edukasi4ID')</title>
+  <link rel="icon" href="{{ asset('logo-edukasi4id.png') }}">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap" rel="stylesheet">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <!-- Navbar CSS manual -->
   <style>
        header {
@@ -83,8 +80,13 @@
       }
     }
   </style>
-<body class="antialiased" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+<body class="flex flex-col min-h-screen antialiased" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
   @include('navbar')
-  @yield('content')
+
+  <main class="flex-1">
+    @yield('content')
+  </main>
+
+  @include('footer')
 </body>
 </html>

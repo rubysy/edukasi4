@@ -105,6 +105,7 @@
       color: #fff;
       margin-top: 20px;
       border-radius: 0 0 8px 8px;
+      height: 400px;
     }
 
     .hero h1 {
@@ -420,10 +421,47 @@
       z-index: 1;
     }
     .card-content {
-      position: relative;
-      z-index: 2;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-logo-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-logo-circle svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.3;
+  opacity: 0.9;
+}
     .card.active {
       transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
       z-index: 10;
@@ -648,7 +686,6 @@
   </section>
 
   <main class="container" aria-label="Main content area">
-
     <section class="about-section" aria-labelledby="about-title">
       <div class="about-logo" role="img" aria-label="Black placeholder box with text logo">
         logo
@@ -711,43 +748,127 @@
     <div class="ruanglingkup-carousel-wrapper">
       <h1 class="ruanglingkup-carousel-title">Ruang Lingkup</h1>
       <div class="carousel-container">
-        <div class="nav-arrow left" onclick="prevCard()">‹</div>
-        <div class="nav-arrow right" onclick="nextCard()">›</div>
+        <button class="nav-arrow left" onclick="prevCard()">‹</button>
+        <button class="nav-arrow right" onclick="nextCard()">›</button>
         <div class="carousel-track">
-          <div class="card active">
-            <div class="card-content">Teknologi Informasi</div>
+        <div class="card active">
+
+        <!-- Workshop IT -->
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+              </svg>
+            </div>
+            <div class="card-title">Workshop IT</div>
+            <div class="card-description">Program IT meliputi Office Specialist, Networking, Programing (web/app), Desain, dan 2D/3D animasi.</div>
           </div>
-          <div class="card next">
-            <div class="card-content">Penelitian & Inovasi</div>
+        </div>
+
+
+        <div class="card next">
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2h4c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h4zM10 4v2h4V4h-4zm10 6H4v8h16v-8z"/>
+                <path d="M11 12h2v2h-2v-2z"/>
+              </svg>
+            </div>
+            <div class="card-title">Prakerin</div>
+            <div class="card-description">Praktek Kerja Industri Bagi Siswa-siswi Sekolah Menengah Kejuruan di Perusahaan / Industri yang bekerja sama dengan Edukasi4ID.</div>
           </div>
-          <div class="card far-right">
-            <div class="card-content">Pendidikan Digital</div>
+        </div>
+
+
+        <div class="card hidden">
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 3h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2h-6l-2 4-2-4H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zm16 12V5H4v10h16z"/>
+                        <path d="M6 7h8v2H6V7zm0 3h6v1H6v-1zm0 2h4v1H6v-1z"/>
+                        <path d="M16 8.5c0 1.38-1.12 2.5-2.5 2.5S11 9.88 11 8.5 12.12 6 13.5 6 16 7.12 16 8.5z"/>
+                        <path d="M13.5 7.5l.5 1h1l-.8.6.3 1-.5-.4-.5.4.3-1-.8-.6h1l.5-1z"/>
+              </svg>
+            </div>
+            <div class="card-title">Setifikasi Industri Dan Internasional</div>
+            <div class="card-description">Uji Kompetensi berbasis industri dan internasional (Adobe, Microsoft, ITS, LO, RedHat, dll) .</div>
           </div>
-          <div class="card hidden">
-            <div class="card-content">Jaringan Global</div>
+        </div>
+
+
+        <div class="card far-left">
+          <div class="card-content">
+            <div class="card-logo-circle">
+             <svg viewBox="0 0 24 24">
+              <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm6 16h-2v-4H8v4H6v-6.83l6-5.33 6 5.33V19z"/>
+              <path d="M7 10.5h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+            </svg>
+            </div>
+            <div class="card-title">Kelas Industri</div>
+            <div class="card-description">pengadaan laboratorium/bengkel serta alat-alat praktek yang sesuai dengan standar industri, guna meningkatkan kompetensi.</div>
           </div>
-          <div class="card hidden">
-            <div class="card-content">Keamanan Siber</div>
+        </div>
+
+
+        <div class="card far-right">
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                 <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09c.7 0 1.3-.4 1.51-1a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06c.46.46 1.12.6 1.82.33h.06a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09c0 .7.4 1.3 1 1.51.7.27 1.36.13 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.06c.27.7.87 1.2 1.57 1.2H21a2 2 0 1 1 0 4h-.09c-.7 0-1.3.4-1.51 1z"/>
+                </svg>
+            </div>
+            <div class="card-title">Penyaluran Tenaga Kerja</div>
+            <div class="card-description">Penempatan kesempatan kerja yang luas dan relevan untuk lulusan sekolah menengah kejuruan.</div>
           </div>
-          <div class="card hidden">
-            <div class="card-content">Artificial Intelligence</div>
+        </div>
+
+
+        <div class="card hidden">
+          <div class="card-content">
+            <div class="card-logo-circle">
+             <svg viewBox="0 0 24 24">
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+              </svg>
+            </div>
+            <div class="card-title">Magang Guru IT</div>
+            <div class="card-description">Program pelatihan kerja yang dilakukan oleh guru untuk meningkatkan kompetensi Guru dan Trend teknologi di industri</div>
           </div>
-          <div class="card hidden">
-            <div class="card-content">Data Analytics</div>
+        </div>
+
+
+        <div class="card hidden">
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                 <path d="M12 2L2 7v3h2v10h16V10h2V7L12 2zm6 16h-2v-6h-8v6H6v-8l6-4 6 4v8z"/>
+                        <path d="M7 11h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+                        <path d="M10 15h4v3h-4v-3z"/>
+                        <path d="M11 3h2v2h-2V3z"/>
+              </svg>
+            </div>
+            <div class="card-title">Konsultasi Pengambangan Sekolah</div>
+            <div class="card-description">Pengembangan aplikasi mobile untuk pembelajaran yang dapat diakses kapan saja</div>
           </div>
-          <div class="card hidden">
-            <div class="card-content">Cloud Computing</div>
-          </div>
-          <div class="card hidden">
-            <div class="card-content">Mobile Development</div>
-          </div>
-          <div class="card hidden">
-            <div class="card-content">Digital Innovation</div>
+        </div>
+
+
+        <div class="card prev">
+          <div class="card-content">
+            <div class="card-logo-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zm3-7h6v2H9v-2zm0 4h6v2H9v-2zm0-8h3v2H9V9z"/>
+              </svg>
+            </div>
+            <div class="card-title">Sertifikasi LSP P3 </div>
+            <div class="card-description">penyelenggaraan Informatika Signal Teknindo.lspsignal.id sertifikasi ini menjamin kompetensi peserta diakui oleh industri IT.</div>
           </div>
         </div>
       </div>
+      
+      </div>
       <div class="dots-container" id="dotsContainer">
-        <!-- Dots will be generated by JavaScript -->
+        <!-- dots will be generated by js -->
       </div>
     </div>
 
@@ -791,8 +912,8 @@
 <section class="glass-card-section" style="margin-top:60px;">
   <div class="glass-card" style="max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
     <!-- Map Placeholder -->
-    <div style="background:#111; border-radius:16px; min-height:220px; display:flex; align-items:center; justify-content:center;">
-      <span style="color:#fff; font-weight:700; font-size:1.1rem;">MAPS LOKASI (akan diisi iframe)</span>
+    <div style="border-radius:16px; min-height:220px; display:flex; align-items:center; justify-content:center;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1597.3444773650192!2d106.790198!3d-6.561367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c416cbdea47b%3A0x9cc185c252b63a14!2sPT%20Bonet%20Utama%20(Internet%20Bogor)!5e1!3m2!1sid!2sid!4v1752934679558!5m2!1sid!2sid" width="370" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- Kontak Info -->
     <div style="display:flex; flex-direction:column; gap:24px;">
@@ -814,14 +935,13 @@
     </div>
   </div>
 </section>
-
-@include('footer')
-  </main>
+  @include('footer')
+</main>
 
   <script>
     // Ruang Lingkup Carousel
     let currentIndex = 0;
-    const totalCards = 10;
+    const totalCards = 8;
     const cards = document.querySelectorAll('.card');
     const dotsContainer = document.getElementById('dotsContainer');
     const kolaborasiHandlers = {};
@@ -963,5 +1083,4 @@ setupKolaborasiLogoCarousel('akademisi');
     });
   </script>
 </body>
-
 </html>

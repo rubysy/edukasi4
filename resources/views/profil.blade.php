@@ -10,12 +10,12 @@
 <div class="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-50 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <!-- Header Section with Glass Effect -->
-    <div class="text-center mb-16 p-8 rounded-2xl bg-white/30 backdrop-blur-md border border-white/40 shadow-lg">
-      <h1 class="text-5xl font-bold bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
-        Profil Edukasi4ID
-      </h1>
+     <div class="text-center mb-16 p-8">
+    <h1 class="text-5xl font-bold">
+  <span class="text-black">Profil</span> 
+  <span style="color: #5cc7d1;">Edukasi4ID</span>
+    </h1>
     </div>
-
     <!-- Cards Grid -->
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       
@@ -61,10 +61,10 @@
           <div class="relative z-10 space-y-4">
             <h2 class="text-3xl font-bold text-gray-800">Visi Misi</h2>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Visi: Menjadi Lembaga Konsultan Pendidikan dan Pelatihan Pengembangan Diri dan Organisasi yang Profesional di Indonesia.
+              🎯Visi: Menjadi Lembaga Konsultan Pendidikan dan Pelatihan Pengembangan Diri dan Organisasi yang Profesional di Indonesia.
             </p>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Misi:
+              🤝Misi:
             </p>
             <p class="text-sm text-gray-600 leading-relaxed">
               • Melayani kebutuhan peningkatan kompetensi Pendidikan, Profesi dan masyarakat di Bidang Teknologi Informasi Komunikasi serta pengembangan SDM.
@@ -81,10 +81,7 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-@include('footer')
 @endsection

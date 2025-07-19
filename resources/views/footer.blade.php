@@ -16,13 +16,13 @@
             <div style="flex:1 1 180px; min-width:160px;">
                 <div style="font-weight:700; margin-bottom:12px;">Navigasi</div>
                 <div style="display:flex; flex-direction:column; gap:7px;">
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Beranda</a>
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Profil</a>
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Layanan</a>
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Mitra</a>
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Kontak Kami</a>
-                    <a href="#" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">LMS</a>
+                    <a href="{{ route('home') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Beranda</a>
+                    <a href="{{ route('profil') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Profil</a>
+                    <a href="{{ route('layanan') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Layanan</a>
+                    <a href="{{ route('mitra') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Mitra</a>
+                    <a href="{{ route('kontak') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Kontak Kami</a>
                 </div>
+
             </div>
             
             <div style="flex:1 1 220px; min-width:180px;">
@@ -38,20 +38,20 @@
                     <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z"/>
                     </svg>
-                    <span>info@edukasi4.id</span>
+                    <span>edukasi4.id@gmail.com</span>
                 </div>
                 <div style="display:flex; align-items:center; gap:10px;">
                     <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
                         <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.26-1.45l-.38-.23-3.67.96.98-3.58-.24-.37A9.93 9.93 0 1 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.41-.84-.75-1.41-1.67-1.58-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.85.14.18 1.93 2.95 4.68 4.02.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34z"/>
                     </svg>
-                    <span>0812-3456-7890</span>
+                    <span>0858-8556-4596 (Verra)</span>
                 </div>
             </div>
             
             <div style="flex:1 1 200px; min-width:160px;">
                 <div style="font-weight:700; margin-bottom:12px;">Sosial Media</div>
                 <div style="display:flex; gap:14px;">
-                    <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Instagram" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="https://instagram.com/edukasi4id" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Instagram" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Facebook" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
