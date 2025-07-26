@@ -82,6 +82,18 @@
       font-size: 1rem;
     }
 
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+
     nav a {
       color: #000;
       position: relative;
@@ -697,13 +709,23 @@
         </p>
       </div>
       <!-- Glass Card Section -->
-<div class="glass-card-section">
-  <div class="glass-card">
-    <div class="glass-card-content">
-      <div class="glass-card-column">
+<div class="glass-card-section" style="display: flex; align-items: center; justify-content: flex-start; margin-left: -50px; margin-right: -175px;">
+  <!-- New card for image on the right -->
+  <div class="image-card" style="flex-shrink: 0; width: 300px; height: 100%; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center;">
+    <div class="image-card-content" style="width: 80%; height: 80%; text-align: center;">
+      <!-- You can insert an image here -->
+      <img src="robot.png" alt="Your Image" style="max-width: 100%; max-height: 100%; object-fit: cover; margin-left: -75px;">
+    </div>
+  </div>
+
+  <!-- Left card (existing content) -->
+  <div class="glass-card" style="margin-right: 20px; display: flex; height: 430px; width: 70%; cursor: pointer;">
+    <div class="glass-card-content" style="display: flex; width: 100%; height: 100%; justify-content: space-between;">
+      <!-- Kolom Pertama -->
+      <div class="glass-card-column" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
         <div class="glass-card-item">
           <span class="glass-card-icon">1</span>
-          <span class="glass-card-text">Membantu Sekolah Menengah Kejuruan (SMK) dalam pelaksanaan prakerin</span>
+          <span class="glass-card-text">Support SMK dalam pelaksanaan prakerin</span>
         </div>
         <div class="glass-card-item">
           <span class="glass-card-icon">2</span>
@@ -718,7 +740,9 @@
           <span class="glass-card-text">Mengembangkan inovasi dalam pembelajaran teknologi</span>
         </div>
       </div>
-      <div class="glass-card-column">
+      
+      <!-- Kolom Kedua -->
+      <div class="glass-card-column" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
         <div class="glass-card-item">
           <span class="glass-card-icon">5</span>
           <span class="glass-card-text">Menyusun kurikulum sesuai kebutuhan industri</span>
@@ -737,6 +761,10 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
     <!-- Floating particles -->
     <div class="glass-card-particle"></div>
     <div class="glass-card-particle"></div>
