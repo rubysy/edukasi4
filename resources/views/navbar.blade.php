@@ -109,9 +109,9 @@
     }
 
     header {
-      display: flex; /* Menggunakan flexbox untuk penataan */
-      align-items: center; /* Menyelaraskan item secara vertikal */
-      justify-content: space-between; /* Menyebar item di antara ruang yang tersedia */
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
       padding: 10px; /* Menambahkan padding untuk header */
     }
   </style>
@@ -132,14 +132,16 @@
         <li><a href="{{ route('layanan') }}" class="{{ request()->routeIs('layanan') ? 'active' : '' }}">Layanan</a></li>
         <li><a href="{{ route('mitra') }}" class="{{ request()->routeIs('mitra') ? 'active' : '' }}">Mitra</a></li>
         <li><a href="{{ route('kontak') }}" class="{{ request()->routeIs('kontak') ? 'active' : '' }}">Kontak Kami</a></li>
+        <li><a href="https://lspsignal.id/">LMS</a></li>
+        
       </ul>
     </nav>
     <script>
       document.getElementById('menu-icon').addEventListener('click', function() {
         const menuList = document.getElementById('menu-list');
-        menuList.classList.toggle('show'); // Menambahkan toggle untuk kelas show
-        menuList.classList.toggle('hidden'); // Menambahkan toggle untuk kelas hidden
-        document.querySelector('nav').style.display = 'block'; // Menampilkan navbar pada saat menu diklik
+        menuList.classList.toggle('show'); 
+        menuList.classList.toggle('hidden'); 
+        document.querySelector('nav').style.display = 'block'; 
       });
 
       // Menambahkan event listener untuk setiap tautan

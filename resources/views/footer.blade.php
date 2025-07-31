@@ -31,7 +31,7 @@
                     <path d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.11 10.39 8.09 11.09.34.25.82.25 1.16 0C13.89 21.39 21 16.25 21 11c0-4.97-4.03-9-9-9zm0 17.88C9.14 17.07 5 13.61 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-4.14 6.07-7 8.88z"/>
                     <circle cx="12" cy="11" r="3"/>
                 </svg>
-                <span>Jl. Contoh Alamat No. 123, Kota</span>
+                <span>Komplek Ruko Plaza Indah Bogor B-2 Jl. KH. Sholeh Iskandar - Kedungbadak, Kota Bogor.</span>
             </div>
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                 <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
@@ -57,10 +57,7 @@
                 <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Facebook" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="LinkedIn" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="YouTube" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+                <a href="https://www.youtube.com/@edukasi4indonesia880" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="YouTube" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
