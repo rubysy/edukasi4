@@ -1,7 +1,7 @@
-<footer style="background:#222; color:#fff; padding:40px 0; width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;">
-    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:40px; padding:0 20px;">
+<footer class="custom-footer" style="background:#222; color:#fff; padding:40px 0; width:100vw; position:relative; ">
+    <div class="footer-container" style="max-width:1200px;  display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:40px; padding:0 20px;">
         <!-- Bagian 1: Logo dan Deskripsi -->
-        <div style="flex:1 1 250px; min-width:220px;">
+        <div class="footer-column" style="flex:1 1 250px; min-width:220px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.5rem; font-weight:700; letter-spacing:-0.04em;">
                 <img src="{{ asset('logo-edukasi4id.png') }}" alt="Edukasi4ID Logo" style="width:36px; height:36px;">
                 EDUKASI4ID
@@ -12,7 +12,7 @@
         </div>
         
         <!-- Bagian 2: Navigasi -->
-        <div style="flex:1 1 180px; min-width:160px;">
+        <div class="footer-column" style="flex:1 1 180px; min-width:160px;">
             <div style="font-weight:700; margin-bottom:12px;">Navigasi</div>
             <div style="display:flex; flex-direction:column; gap:7px;">
                 <a href="{{ route('home') }}" style="color:#fff; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#69cae8'" onmouseout="this.style.color='#fff'">Beranda</a>
@@ -24,7 +24,7 @@
         </div>
         
         <!-- Bagian 3: Kontak -->
-        <div style="flex:1 1 220px; min-width:180px;">
+        <div class="footer-column" style="flex:1 1 220px; min-width:180px;">
             <div style="font-weight:700; margin-bottom:12px;">Kontak</div>
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                 <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
@@ -48,7 +48,7 @@
         </div>
         
         <!-- Bagian 4: Sosial Media -->
-        <div style="flex:1 1 200px; min-width:160px;">
+        <div class="footer-column" style="flex:1 1 200px; min-width:160px;">
             <div style="font-weight:700; margin-bottom:12px;">Sosial Media</div>
             <div style="display:flex; gap:14px;">
                 <a href="https://instagram.com/edukasi4id" style="color:#69cae8; font-size:1.5rem; transition:transform 0.3s;" title="Instagram" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
@@ -65,35 +65,70 @@
     </div>
     
     <!-- Footer Copyrigth -->
-    <div style="text-align:center; color:#bbb; font-size:0.98rem; margin-top:32px; padding-top:20px; border-top:1px solid #444;">
+    <div class="copyright" style="text-align:center; color:#bbb; font-size:0.98rem; margin-top:32px; padding-top:20px; border-top:1px solid #444;">
         &copy; 2025 Edukasi4ID. All rights reserved.
     </div>
 </footer>
 
 <style>
-    @media (max-width: 768px) {
-        footer .container {
-            flex-direction: column;
-            align-items: center;
-        }
+    footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 0;
+    width: 100%;
+    left:50%; 
+    right:50%; 
+    margin-left:-50vw;
+}
 
-        footer .footer-column {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+footer .footer-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 0 auto; /* biar center di desktop */
+}
 
-        footer .footer-column img {
-            margin-bottom: 10px;
-        }
+footer .footer-column {
+    flex: 1 1 250px;
+    min-width: 180px;
+}
 
-        footer .footer-column a {
-            display: block;
-            margin-bottom: 10px;
-        }
+footer .copyright {
+    text-align: center;
+    color: #bbb;
+    font-size: 0.98rem;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
 
-        footer .footer-column svg {
-            margin-right: 10px;
-        }
+/* RESPONSIVE */
+@media (max-width: 750px) {
+
+    footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 0;
+    width: 100%;
+    margin-left: -393px;
+    
+}
+    footer .footer-container {
+        flex-direction: column;    /* jadi tumpuk */
+        align-items: flex-start;   /* ke kiri */
+        max-width: 100%;           /* full width */
+        padding: 0 20px;           /* kasih padding dikit */
+        
     }
+
+    footer .footer-column {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+} 
 </style>

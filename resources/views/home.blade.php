@@ -141,61 +141,163 @@
       gap: 40px;
       align-items: center;
       flex-wrap: wrap;
+      padding: 16px;
     }
 
     /* Logo black box placeholder */
-    .about-logo {
-      flex: 1 1 280px;
-      background-color: #000;
-      border-radius: 12px;
-      height: 230px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 1.5rem;
-      box-shadow: 0 6px 15px rgb(0 0 0 / 0.4);
-      margin-left: -140px;
-    }
+    /* Logo Styling */
+.about-logo {
+  padding: min(5em, 8%);
+  flex: 1 1 280px;
+  background-color: #000;
+  border-radius: 1em;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.4);
+  margin-left: 0; /* Menghapus margin negatif */
+}
 
-    /* About Text */
-    .about-text {
-      flex: 1 1 450px;
-    }
+.about-text {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column; /* Align text vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: flex-start; /* Align text to the left */
+  padding: 10px 0;
+}
 
-    .about-text h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: -5px;
-      margin-top: -15px;
-      margin-left: -12px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
-    }
+.about-text h2 {
+  font-size: clamp(20px, 2.5vw, 40px); /* Slightly smaller font size */
+  font-weight: 800;
+  margin-bottom: 10px; /* Adjust margin for better spacing */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
 
-    .about-text h2 span {
-      color: #69cae8;
-    }
+.about-text h2 span {
+  color: #69cae8;
+}
 
-    .about-text p {
-      font-weight: 600;
-      font-size: 0.9rem;
-      max-width: 480px;
-      line-height: 1.4;
-      letter-spacing: 0.02em;
-      margin-left: -9px;
-    }
+.about-text p {
+  font-weight: 600;
+  font-size: clamp(14px, 2.2vw, 16px); /* Adjusted font size */
+  max-width: 480px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+  margin-left: 0; /* Adjusted margin for alignment */
+  overflow-wrap: break-word;
+}
+ 
 
-    /* Section Titles */
-    h3.section-title {
-      margin-top: 60px;
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #000;
-      letter-spacing: 0.04em;
-      text-align: center;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+/* Responsif untuk layar kecil */
+  @media (max-width: 769px) {
+  .about-logo {
+  padding: min(5em, 8%);
+  flex: 1 1 280px;
+  background-color: #000;
+  border-radius: 1em;
+  height: 230px;
+  display: flex;
+  align-items: center; /* Vertically center the logo */
+  justify-content: flex-start; /* Align logo to the left */
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.4);
+  margin-left: -625px; /* Align the logo to the left edge */
+  margin-right: 0; /* Optional: Ensure there's no margin on the right */
+}
+
+
+
+.about-text {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column; /* Align text vertically */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align text to the left */
+  padding: 20px; /* Padding inside the box */
+  width: 400px; /* Set a fixed width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+  margin-top: 20px; /* Space above the box */
+  position: relative; /* Enables positioning of inner elements */
+  
+}
+
+.about-text h2 {
+  font-size: clamp(18px, 2.2vw, 32px); /* Font size */
+  font-weight: 800;
+  margin-bottom: 8px; /* Space between title and paragraph */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
+  text-align: left;
+  position: absolute;
+  top: -186px; /* Adjust top position */
+  left: -18px; /* Adjust left position */
+}
+
+.about-text h2 span {
+  color: #69cae8;
+}
+
+.about-text p {
+  font-weight: 270;
+  font-size: clamp(14px, 2.2vw, 16px); /* Font size */
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+  margin-left: 0;
+  overflow-wrap: break-word;
+  max-width: 200px; /* Ensure text wraps inside the box */
+  position: absolute;
+  top: -160px; /* Adjust the paragraph position from the top */
+  left: -18px; /* Align to the left */
+  right: -200px; /* Optional: controls how close the text is to the right */
+}
+
+ 
+}
+
+
+
+
+
+
+
+
+/* Responsif untuk layar kecil (mobile) */
+@media (max-width: 769px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+  .about-text {
+    padding: 0 20px; /* Memberikan padding untuk jarak di sisi */
+  }
+
+  .about-text h2 {
+    margin-top: 0; /* Menghapus margin top agar lebih rapat */
+    margin-left: 0; /* Menghapus margin kiri */
+  }
+
+  .about-text p {
+    margin-left: 0; /* Menghapus margin kiri untuk teks */
+  }
+}
+
+
 
     /* Responsive */
     @media (max-width: 750px) {
@@ -221,8 +323,6 @@
       .about-logo,
       .about-text {
         flex-basis: 100%;
-        max-width: 560px;
-        margin: 0 auto;
       }
 
       .about-logo {
@@ -244,6 +344,15 @@
   min-height: 400px;
   padding: 40px 20px;
 }
+
+.about-section .glass-card {
+  margin-right: 20px;
+  display: flex;
+  height: 430px;
+  width: 70%;
+  cursor: pointer;
+}
+
 .glass-card {
   position: relative;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
@@ -290,6 +399,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
+}
+.about-section .glass-card-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
 }
 .glass-card-column {
   display: flex;
@@ -351,23 +466,162 @@
   0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
   50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
 }
+
+
 @media (max-width: 768px) {
-  .glass-card {
-    padding: 30px 20px;
-    margin: 0 10px;
+   .glass-card-section {
+    margin-top: 15px; /* sebelumnya 50px, diperkecil */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 350px;
+    padding-left: 0;   /* hapus jarak kiri */
   }
-  .glass-card-content {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .glass-card-item {
-    padding: 12px;
-  }
-  .glass-card-text {
-    font-size: 0.9rem;
+.about-section .glass-card{
+  position: relative; 
+  left: -395px;   /* geser ke kiri, angka bisa lu gedein biar makin mepet */
+  margin-right: auto;  /* dorong ke kiri */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 380x;
+  width: 100%;
+  max-height: 385px; /* Membatasi tinggi maksimal */
+  height: 100%; /* Memastikan tinggi penuh */
+  overflow: hidden;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(105, 202, 232, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 25%, 
+    rgba(105, 202, 232, 0.08) 50%, 
+    rgba(255, 255, 255, 0.03) 75%, 
+    rgba(105, 202, 232, 0.06) 100%);
+  border-radius: 20px;
+  z-index: 1;
+}
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent, 
+    rgba(255, 255, 255, 0.05), 
+    transparent);
+  border-radius: 22px;
+  z-index: 0;
+}
+.glass-card-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;         /* jarak antar kolom/item → kecilin */
+  justify-content: flex-start;
+  align-items: start;
+  width: 100%;       /* jangan fixed biar fleksibel */
+  height: auto;      /* biar ngikut isi */
+}
+.glass-card-column {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;          /* kecilin gap antar item */
+}
+.glass-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;        /* biar penuh sesuai kolomnya */
+  max-width: 155px;   /* batas maksimal lebar */
+  min-height: 45px;   /* tinggi minimum */
+  height: auto;       /* otomatis ngikutin isi */
+  margin: 0;         /* buang margin biar ga nambah jarak */
+  margin-left: 0; /* pastiin mepet kiri */
+}
+.glass-card-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(105, 202, 232, 0.3);
+}
+.glass-card-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #69cae8, #357ABD);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 4px 12px rgba(105, 202, 232, 0.3);
+}
+.glass-card-text {
+  color: #333;
+  font-size: 0.55rem;
+  font-weight: 250;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+.glass-card-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(105, 202, 232, 0.6);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.glass-card-particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.glass-card-particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+.glass-card-particle:nth-child(3) { top: 80%; left: 30%; animation-delay: 4s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+}
+}
+
+
+
+
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  /* kalau robotnya kepotong di dalam card, buka overflow */
+  .glass-card { overflow: visible; }
+
+  .img-robot {
+    display: block;
+    margin: 0;
+    /* geser kanan 16px, naik 200px, lalu gedein dikit */
+    transform: translate(120px, -235px) scale(1.12) !important;
+    transform-origin: top left;
+    will-change: transform;
   }
 }
 
+  
     /* --- Carousel Styles --- */
     .ruanglingkup-carousel-wrapper {
       margin-top: 60px;
@@ -531,7 +785,7 @@
     .nav-arrow.left {
       left: 20px;
     }
-    .nav-arrow.right {
+    .nav-arrow.right-1 {
       right: 20px;
     }
     .dots-container {
@@ -639,54 +893,455 @@
   background: #4A90E2;
 }
 
+
+
     @media (max-width: 768px) {
-      .ruanglingkup-carousel-title {
+    .ruanglingkup-carousel-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    text-align: left; /* Mengatur teks agar berada di kiri */
+    margin-left: 95px; /* Hapus margin kiri jika ada */
+}
+    .kolaborasi-main-title {
         font-size: 2rem;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+    }
+    .carousel-container {
+        height: 200px;
+        border-radius: 20px; /* Adjust this value as needed */
+        position: relative;
+        width: 100%;
+        max-width: 360px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000px;
+        overflow: hidden;
+        margin: 0;
+    }
+    .card {
+        width: 150px;
+        height: 200px;
+        font-size: 5px;
+        position: absolute;
+        width: 150px;
+        height: 200px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+        overflow: hidden;
+        transform-style: preserve-3d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 5;
+        font-size: 5px;
+        text-align: center;
+        padding: 20px;
       }
-      .kolaborasi-main-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        .card-logo-circle {
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 2px;
       }
-      .carousel-container {
-        height: 250px;
+
+      .card-logo-circle svg {
+        width: 15px;
+        height: 15px;
+        fill: white;
       }
-      .card {
-        width: 300px;
-        height: 400px;
-        font-size: 0.95rem;
+
+      .card-title {
+        font-size: 0.85rem;
+        font-weight: 445;
+        margin-bottom: 1px;
+        text-align: center;
       }
-      .card.active {
+
+      .card-description {
+        font-size: 0.65rem;
+        font-weight: 200;
+        text-align: center;
+        line-height: 1.3;
+        opacity: 0.9;
+      }
+    .card.active {
         transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-      }
-      .card.prev {
-        transform: translateX(-120px) translateZ(-80px) rotateY(10deg) scale(0.8);
-      }
-      .card.next {
-        transform: translateX(120px) translateZ(-80px) rotateY(-10deg) scale(0.8);
-      }
-      .card.far-left {
-        transform: translateX(-200px) translateZ(-150px) rotateY(20deg) scale(0.6);
-      }
-      .card.far-right {
-        transform: translateX(200px) translateZ(-150px) rotateY(-20deg) scale(0.6);
-      }
-      .nav-arrow {
-        width: 40px;
-        height: 40px;
+    }
+    .card.prev {
+        transform: translateX(-70px) translateZ(-80px) rotateY(10deg) scale(0.8);
+    }
+    .card.next {
+        transform: translateX(70px) translateZ(-80px) rotateY(-10deg) scale(0.8);
+    }
+    .card.far-left {
+        transform: translateX(-130px) translateZ(-150px) rotateY(20deg) scale(0.6);
+    }
+    .card.far-right {
+        transform: translateX(130px) translateZ(-150px) rotateY(-20deg) scale(0.6);
+    }
+    .nav-arrow {
+        width: 30px;
+        height: 30px;
         font-size: 1.2rem;
-      }
-      .nav-arrow.left {
-        left: 10px;
-      }
-      .nav-arrow.right {
-        right: 10px;
-      }
-      .kolaborasi-card {
+    }
+    .nav-arrow.left {
+        left: 1.5px;
+    }
+    .nav-arrow.right-1 {
+        right: 1.5px;
+    }
+    .kolaborasi-card {
         width: 300px;
         height: 150px;
-      }
+        border-radius: 20px; /* Uniform border radius */
     }
+
+    .glass-card {
+        margin-right: 20px;
+        display: flex;
+        height: 380px; /* Reduced height */
+        width: 60%; /* Reduced width */
+        cursor: pointer;
+    }
+
+    .glass-card-content {
+        display: flex;
+        width: 75%;
+        height: 75%;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allows the columns to wrap on smaller screens */
+    }
+
+    .glass-card-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        margin-bottom: 15px; /* Reduced spacing between columns */
+    }
+
+    .glass-card-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px; /* Reduced spacing */
+    }
+
+    .glass-card-icon {
+        margin-right: 8px; /* Reduced margin */
+    }
+
+    .glass-card-text {
+        font-size: 12px; /* Reduced font size */
+    }
+    .carousel-container {
+    justify-content: flex-start; /* Geser konten carousel ke kiri */
+    margin-left: -5px; /* Hapus margin kiri */
+} 
+    }
+
+    @media screen and (max-width: 768px) {
+    /* Mengatur posisi dots-container agar rata kiri */
+    .dots-container {
+        display: flex;
+        justify-content: flex-start; /* Mengatur untuk rata kiri */
+        gap: 10px;
+        margin-top: 20px; /* Mengatur jarak antara carousel dan dots */
+        margin-left: 97px; /* Memberikan sedikit jarak kiri jika perlu */
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+        background: #4A90E2;
+        transform: scale(1.2);
+    }
+
+    .dot:hover {
+        background: #6BA3F0;
+    }
+
+    /* Card styles (no changes here) */
+    .card:nth-child(1) { background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); }
+    .card:nth-child(2) { background: linear-gradient(135deg, #5CB3CC 0%, #4A90E2 100%); }
+    .card:nth-child(3) { background: linear-gradient(135deg, #45B7D1 0%, #357ABD 100%); }
+    .card:nth-child(4) { background: linear-gradient(135deg, #4A90E2 0%, #5CB3CC 100%); }
+    .card:nth-child(5) { background: linear-gradient(135deg, #357ABD 0%, #45B7D1 100%); }
+    .card:nth-child(6) { background: linear-gradient(135deg, #5CB3CC 0%, #4A90E2 100%); }
+    .card:nth-child(7) { background: linear-gradient(135deg, #45B7D1 0%, #357ABD 100%); }
+    .card:nth-child(8) { background: linear-gradient(135deg, #4A90E2 0%, #5CB3CC 100%); }
+    .card:nth-child(9) { background: linear-gradient(135deg, #357ABD 0%, #45B7D1 100%); }
+    .card:nth-child(10) { background: linear-gradient(135deg, #5CB3CC 0%, #4A90E2 100%); }
+}
+
+    @media screen and (max-width: 768px) {
+
+    /* Styling untuk kolaborasi section */
+    .kolaborasi-section {
+        padding: 10px;
+        text-align: left; /* Memastikan konten berada di kiri */
+    }
+
+    /* Styling untuk judul utama */
+    .kolaborasi-main-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        text-align: left; /* Judul tetap di kiri */
+        margin-left: 111px; /* Memberikan sedikit jarak kiri */
+    }
+
+    /* Styling untuk setiap subsection (perusahaan dan akademisi) */
+    .kolaborasi-subsection {
+        margin-bottom: 20px;
+        text-align: left; /* Menempatkan subsection di kiri */
+        
+    }
+
+    .kolaborasi-header {
+        
+        margin-bottom: 8px;
+    }
+
+    .kolaborasi-header h2 {
+        font-size: 1.4rem;
+        margin-left: 106px; /* Memberikan sedikit jarak kiri */
+    }
+
+    /* Carousel Container */
+    .kolaborasi-carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 15px; /* Mengurangi margin atas */
+    }
+
+    /* Carousel */
+    .kolaborasi-carousel {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Jarak antar slide */
+    }
+
+    .kolaborasi-slide {
+        flex: 0 0 auto;
+        margin: 0 5px; /* Mengurangi jarak antar slide */
+        text-align: center;
+    }
+
+    .kolaborasi-slide img {
+        width: 65%;
+        max-width: 50px; /* Ukuran gambar lebih kecil */
+        height: auto;
+        border-radius: 8px;
+        object-fit: contain;
+    }
+
+    /* Tombol Navigasi (Left & Right) */
+    .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem; /* Ukuran font tombol */
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        padding: 6px;
+        cursor: pointer;
+        z-index: 6;
+    }
+
+    .nav-arrow.left {
+        left: 1px; /* Tombol kiri lebih dekat ke sisi kiri */
+    }
+
+    .nav-arrow.right {
+        right: 421px; /* Tombol kanan lebih dekat ke sisi kanan */
+    }
+
+    /* Indikator Dots */
+    .kolaborasi-indicators {
+        display: flex;
+        
+        margin-top: 5px;
+    }
+
+    .kolaborasi-indicators .dot {
+        width: 6px; /* Ukuran dot lebih kecil */
+        height: 6px;
+        background-color: #ddd;
+        border-radius: 25%;
+        margin: 0 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .kolaborasi-indicators .dot.active {
+        background-color: #4A90E2;
+    }
+
+    .kolaborasi-indicators .dot:hover {
+        background-color: #6BA3F0;
+    }
+
+    /* Mengatur ukuran gambar atau elemen kecil dalam dot */
+    .kolaborasi-indicators .dot img {
+        width: 4px; /* Menurunkan ukuran gambar dalam dot */
+        height: 4px;
+        object-fit: contain;
+    }
+
+    /* Styling untuk mobile view pada perusahaan dan akademisi section */
+    .kolaborasi-subsection {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* Styling untuk tombol navigasi kanan */
+    .nav-arrow.right {
+        font-size: 2rem; /* Ukuran font lebih besar untuk laptop */
+        background: rgba(255, 255, 255, 0.8); /* Latar belakang lebih terang */
+        border: none;
+        padding: 12px; /* Padding lebih besar */
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px; /* Memberikan jarak dari sisi kanan */
+    }
+
+    /* Menambahkan efek hover untuk tombol kanan */
+    .nav-arrow.right:hover {
+        background: rgba(255, 255, 255, 1); /* Latar belakang lebih terang saat hover */
+    }
+}
+
+  @media screen and (max-width: 768px) {
+  .img-robot { /* pastikan ini adalah class yang digunakan pada tag gambar */
+    width: 50px;    /* Membuat gambar menyesuaikan lebar layar */
+    height: auto;   /* Menjaga proporsi gambar */
+    object-fit: cover; /* Menjaga gambar tetap terpotong proporsional jika perlu */
+    margin-left: 0;   /* Menghilangkan margin negatif agar gambar lebih responsif */
+  }
+    
+}
+.glass-card-section-map {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+}
+.glass-card-map {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  overflow: hidden;
+  max-width:700px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.glass-card-text-map{
+  color: #333;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.map-contact-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+
+/* KODE INI SEKARANG AKAN BERFUNGSI SETELAH INLINE STYLE DIHAPUS */
+@media  and (max-width: 768px) {
+  /* Wadah utama section, tidak diubah */
+.glass-card-section-map {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* KARTU KACA */
+.glass-card-map {
+  /* ATUR LAYOUT VERTIKAL */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  /* Style Kartu */
+  max-width: 300px;
+  transform: translateX(-35px);
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* PETA */
+.glass-card-map iframe {
+  width: 220px;
+  height: 150px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* BLOK TEKS */
+.glass-card-map > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* TEKS */
+.glass-card-text-map {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+}
+
   </style>
 </head>
 
@@ -705,22 +1360,24 @@
       <div class="about-text">
         <h2 id="about-title">Tentang <span>Edukasi4ID</span></h2>
         <p>
-          Edukasi4ID adalah platform yang dibentuk oleh para praktisi Teknologi Informasi dan Komunikasi yang berkomitmen kuat terhadap pengembangan pendidikan vokasi di Indonesia.
+          Edukasi4ID adalah platform yang dibentuk oleh para praktisi 
+          Teknologi Informasi dan Komunikasi yang berkomitmen kuat terhadap pengembangan pendidikan vokasi di Indonesia.
         </p>
       </div>
       <!-- Glass Card Section -->
 <div class="glass-card-section" style="display: flex; align-items: center; justify-content: flex-start; margin-left: -50px; margin-right: -175px;">
   <!-- New card for image on the right -->
-  <div class="image-card" style="flex-shrink: 0; width: 300px; height: 100%; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center;">
+  <div class="image-card" style="flex-shrink: 0; width: 300px; height: 100%; display: flex; justify-content: center; align-items: center;">
     <div class="image-card-content" style="width: 80%; height: 80%; text-align: center;">
       <!-- You can insert an image here -->
-      <img src="robot.png" alt="Your Image" style="max-width: 100%; max-height: 100%; object-fit: cover; margin-left: -75px;">
+      <img class="img-robot" src="robot1.png" alt="Your Image" style="max-width: 100%; max-height: 100%; object-fit: cover; margin-left: -75px; position: center;
+  top: -90px;">
     </div>
   </div>
 
   <!-- Left card (existing content) -->
-  <div class="glass-card" style="margin-right: 20px; display: flex; height: 430px; width: 70%; cursor: pointer;">
-    <div class="glass-card-content" style="display: flex; width: 100%; height: 100%; justify-content: space-between;">
+  <div class="glass-card">
+    <div class="glass-card-content">
       <!-- Kolom Pertama -->
       <div class="glass-card-column" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
         <div class="glass-card-item">
@@ -777,7 +1434,7 @@
       <h1 class="ruanglingkup-carousel-title">Ruang Lingkup</h1>
       <div class="carousel-container">
         <button class="nav-arrow left" onclick="prevCard()">‹</button>
-        <button class="nav-arrow right" onclick="nextCard()">›</button>
+        <button class="nav-arrow right-1" onclick="nextCard()">›</button>
         <div class="carousel-track">
         <div class="card active">
 
@@ -906,7 +1563,7 @@
   <div class="kolaborasi-subsection" id="perusahaan-section">
     <div class="kolaborasi-header"><h2>Perusahaan</h2></div>
     <div class="kolaborasi-carousel-container">
-      <button class="nav-arrow left" onclick="moveKolaborasiSlide(-1, 'perusahaan')">‹</button>
+      <button class="nav-arrow left " onclick="moveKolaborasiSlide(-1, 'perusahaan')">‹</button>
       <div class="kolaborasi-carousel" id="perusahaan-carousel">
   @foreach($kolaborasiPerusahaan as $item)
     <div class="kolaborasi-slide">
@@ -937,28 +1594,28 @@
     </section>
 
     <!-- Maps & Kontak Section -->
-<section class="glass-card-section" style="margin-top:60px;">
-  <div class="glass-card" style="max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+<section class="glass-card-section-map" style="margin-top:60px;">
+  <div class="glass-card-map" style="max-width:700px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
     <!-- Map Placeholder -->
     <div style="border-radius:16px; min-height:220px; display:flex; align-items:center; justify-content:center;">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1597.3444773650192!2d106.790198!3d-6.561367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c416cbdea47b%3A0x9cc185c252b63a14!2sPT%20Bonet%20Utama%20(Internet%20Bogor)!5e1!3m2!1sid!2sid!4v1752934679558!5m2!1sid!2sid" width="370" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- Kontak Info -->
-    <div style="display:flex; flex-direction:column; gap:24px;">
+    <div style="display:flex; flex-direction:column; gap:24px;" >
       <div style="display:flex; align-items:center; gap:14px;">
         <!-- SVG lokasi -->
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.11 10.39 8.09 11.09.34.25.82.25 1.16 0C13.89 21.39 21 16.25 21 11c0-4.97-4.03-9-9-9zm0 17.88C9.14 17.07 5 13.61 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-4.14 6.07-7 8.88z"/><circle cx="12" cy="11" r="3" fill="#69cae8"/></svg>
-        <span class="glass-card-text" style="font-size:1rem;">Komplek Ruko Plaza Indah Bogor B-2 Jl. KH. Sholeh Iskandar - Kedungbadak, Kota Bogor.</span>
+        <span class="glass-card-text-map" style="font-size:1rem;" >Komplek Ruko Plaza Indah Bogor B-2 Jl. KH. Sholeh Iskandar - Kedungbadak, Kota Bogor.</span>
       </div>
       <div style="display:flex; align-items:center; gap:14px;">
         <!-- SVG email -->
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z"/></svg>
-        <span class="glass-card-text" style="font-size:1rem;">edukasi4.id@gmail.com</span>
+        <span class="glass-card-text-map" style="font-size:1rem;">edukasi4.id@gmail.com</span>
       </div>
       <div style="display:flex; align-items:center; gap:14px;">
         <!-- SVG WhatsApp/Telepon -->
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#69cae8" d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.26-1.45l-.38-.23-3.67.96.98-3.58-.24-.37A9.93 9.93 0 1 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.19-.44-2.27-1.41-.84-.75-1.41-1.67-1.58-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.85.14.18 1.93 2.95 4.68 4.02.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34z"/></svg>
-        <span class="glass-card-text" style="font-size:1rem;">0858-8556-4596</span>
+        <span class="glass-card-text-map" style="font-size:1rem;">0858-8556-4596</span>
       </div>
     </div>
   </div>
