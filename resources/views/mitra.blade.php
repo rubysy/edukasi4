@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@php
-    use App\Models\Mitra;
-    $mitras = Mitra::all();
-@endphp
 
 @section('title', 'Mitra - Edukasi4ID')
 

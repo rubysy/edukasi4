@@ -82,7 +82,7 @@
   </style>
 <body class="flex flex-col min-h-screen antialiased" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
   @include('navbar')
-
+    
   <main class="flex-1">
     @yield('content')
   </main>

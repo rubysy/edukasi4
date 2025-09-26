@@ -17,7 +17,13 @@ class KolaborasiResource extends Resource
 {
     protected static ?string $model = Kolaborasi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $navigationLabel = 'Kolaborasi Content';
+
+    protected static ?string $pluralModelLabel = 'Kolaborasi Content';
+
+    protected static ?string $navigationGroup = 'Home Management';
 
  public static function form(Form $form): Form
 {
@@ -35,6 +41,8 @@ class KolaborasiResource extends Resource
             Forms\Components\FileUpload::make('logo')
                 ->image()
                 ->directory('kolaborasi-logos')
+                ->imagePreviewHeight(fn ($operation) => $operation === 'create' ? '250' : null)
+                ->disablePreview(fn ($operation) => $operation === 'edit') // Only disable on edit
                 ->required(),
         ]);
 }

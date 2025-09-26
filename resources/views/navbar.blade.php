@@ -19,6 +19,7 @@
         opacity: 0.9; /* Efek opacity */
         display: none; /* Sembunyikan menu awalnya */
         height: 100vh; /* Menutupi seluruh tinggi layar */
+        z-index: 9999;
       }
 
       nav ul {
@@ -41,13 +42,14 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Bayangan untuk efek kedalaman */
         background-color: rgba(30, 42, 52, 0.95); /* Tampilkan menu */
         border-radius: 15px;
+        z-index: 9999;
       }
 
       .menu-icon {
         display: flex;
         align-items: center;
         cursor: pointer; /* Menambahkan pointer untuk menunjukkan bahwa ini dapat diklik */
-        z-index: 1; /* Pastikan ikon di atas menu */
+        z-index: 10000; /* Pastikan ikon di atas menu */
         position: absolute; /* Ubah ini untuk posisi yang lebih bebas */
         top: 10px; /* Menyesuaikan jarak atas */
         right: 20px; /* Menyesuaikan jarak kanan */
@@ -132,7 +134,7 @@
         <li><a href="{{ route('layanan') }}" class="{{ request()->routeIs('layanan') ? 'active' : '' }}">Layanan</a></li>
         <li><a href="{{ route('mitra') }}" class="{{ request()->routeIs('mitra') ? 'active' : '' }}">Mitra</a></li>
         <li><a href="{{ route('kontak') }}" class="{{ request()->routeIs('kontak') ? 'active' : '' }}">Kontak Kami</a></li>
-        <li><a href="https://lspsignal.id/">LMS</a></li>
+        <li><a href="#">LMS</a></li>
         
       </ul>
     </nav>

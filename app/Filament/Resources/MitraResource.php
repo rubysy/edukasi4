@@ -19,7 +19,14 @@ class MitraResource extends Resource
 {
     protected static ?string $model = Mitra::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $navigationLabel = 'Mitra Content';
+
+    protected static ?string $pluralModelLabel = 'Mitra Content';
+
+    protected static ?string $navigationGroup = 'Mitra Management';
+
 
     public static function form(Form $form): Form
     {
@@ -33,6 +40,8 @@ class MitraResource extends Resource
             FileUpload::make('logo')
                 ->image()
                 ->directory('logos')
+                ->imagePreviewHeight(fn ($operation) => $operation === 'create' ? '250' : null)
+                ->disablePreview(fn ($operation) => $operation === 'edit') // Only disable on edit
                 ->label('Logo (gambar)'),
         ]);
     }

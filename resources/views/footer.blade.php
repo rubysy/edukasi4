@@ -37,7 +37,7 @@
                 <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z"/>
                 </svg>
-                <span>edukasi4.id@gmail.com</span>
+                <span>admin@lspsignal.id</span>
             </div>
             <div style="display:flex; align-items:center; gap:10px;">
                 <svg width="20" height="20" fill="#69cae8" viewBox="0 0 24 24">
@@ -110,25 +110,14 @@ footer .copyright {
 @media (max-width: 750px) {
 
     footer {
-    background: #222;
-    color: #fff;
-    padding: 40px 0;
-    width: 100%;
-    margin-left: -393px;
-    
+  margin-left: 20px 0; /* Replace -393px */
+  padding: 20px 0;
 }
-    footer .footer-container {
-        flex-direction: column;    /* jadi tumpuk */
-        align-items: flex-start;   /* ke kiri */
-        max-width: 100%;           /* full width */
-        padding: 0 20px;           /* kasih padding dikit */
-        
-    }
-
-    footer .footer-column {
-        width: 100%;
-        text-align: left;
-        margin-bottom: 20px;
-    }
-} 
+footer .footer-container {
+  padding: 0 15px;
+  align-items: flex-start;
+}
+footer .footer-column {
+  min-width: 100%; /* Tambah: Full stack */
+}
 </style>
