@@ -201,4 +201,4 @@ Aplikasi menggunakan multiple CDN untuk tech stack icons:
 
 ---
 
-**© 2024 Edukasi4ID. All rights reserved.**
+**© 2025 Edukasi4ID. All rights reserved.**
